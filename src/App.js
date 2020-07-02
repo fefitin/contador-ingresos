@@ -28,7 +28,7 @@ function App() {
   };
 
   const leave = n => {
-    setInside(t => t - n);
+    setInside(t => Math.max(t - n, 0));
     if(waiting > 0) {
       enter(1);
     }
@@ -37,7 +37,7 @@ function App() {
   const enter = n => {
     setInside(i => i + n);
     setTotal(t => t + n);
-    setWaiting(t => t - n);
+    setWaiting(t => Math.max(t - n, 0));
   };
 
   useEffect(() => {
@@ -59,7 +59,7 @@ function App() {
       if(Math.random() < 0.5) {
         leave(1)
       }
-    }, 1000);
+    }, 500);
   }, []);
 
   return (
