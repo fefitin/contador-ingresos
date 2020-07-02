@@ -42,7 +42,7 @@ function App() {
 
   useEffect(() => {
     const initInside = randomInt(345, 360);
-    const initWaiting = randomInt(5, 15);
+    const initWaiting = randomInt(70, 80);
 
     enter(initInside);
     setWaiting(initWaiting);
